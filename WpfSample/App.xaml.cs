@@ -15,15 +15,5 @@ namespace WpfSample
     /// </summary>
     public partial class App : Application
     {
-        
-        [STAThread]
-        public static void Main()
-        {
-
-            WpfSample.App app = new WpfSample.App();
-            app.InitializeComponent();
-            app.Run();
-        }
-
     }
 }
