@@ -30,7 +30,11 @@ namespace WpfSample
             InitializeComponent();
 
             textDispViewModel = new TextDispViewModel();
-            DataContext = textDispViewModel;
+
+            // Window全体に所属させても、TextBox1に直接所属させても
+            // 動作に変わりはなかった。
+            //DataContext = textDispViewModel;
+            TextBox1.DataContext = textDispViewModel;
 
             console = new ConsoleThread(this.Dispatcher, ChangeText);
         }
