@@ -13,12 +13,21 @@ namespace WpfSample
         Action<string> notifyInput;
         public bool IsActive { get; private set; } = false;
 
-        public ConsoleThread(Dispatcher d, Action<string> a)
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="dispatcher">伝達先のUIスレッドのディスパッチャ</param>
+        /// <param name="notifyCallBack">UIスレッドへの通知に用いるコールバック</param>
+        public ConsoleThread(Dispatcher dispatcher, Action<string> notifyCallBack)
         {
-            ParentDispatcher = d;
-            notifyInput = a;
+            ParentDispatcher = dispatcher;
+            notifyInput = notifyCallBack;
         }
 
+        /// <summary>
+        /// Consoleに入力された文字列をコールバックでUIスレッドへ
+        /// 伝える
+        /// </summary>
         public void ExecuteConsole()
         {
 

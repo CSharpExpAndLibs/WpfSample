@@ -8,8 +8,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="645.395" Width="879.934">
     <Grid>
-        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="162" Margin="38,47,0,0" TextWrapping="Wrap" Text="AAAAAAA" VerticalAlignment="Top" Width="460" >
+        <TextBox x:Name="TextBox1" HorizontalAlignment="Left" Height="369" Margin="75,47,0,0" TextWrapping="Wrap" Text="{Binding Model.TextData}" VerticalAlignment="Top" Width="723" >
         </TextBox>
-        <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="108,305,0,0" VerticalAlignment="Top" Width="76" Click="Button1_Click"/>
+        <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="75,542,0,0" VerticalAlignment="Top" Width="76" Click="Button1_Click"/>
     </Grid>
 </Window>

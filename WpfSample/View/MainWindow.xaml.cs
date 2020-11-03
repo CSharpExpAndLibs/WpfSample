@@ -23,9 +23,15 @@ namespace WpfSample
         delegate void NotifyInput(string liine);
 
         ConsoleThread console;
+        TextDispViewModel textDispViewModel;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            textDispViewModel = new TextDispViewModel();
+            DataContext = textDispViewModel;
+
             console = new ConsoleThread(this.Dispatcher, ChangeText);
         }
 
@@ -36,7 +42,7 @@ namespace WpfSample
                 this.Dispatcher.BeginInvoke(new NotifyInput(ChangeText), new object[] { line });
                 return;
             }
-            TextBox1.Text = line;
+            textDispViewModel.Model.TextData = line;
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
