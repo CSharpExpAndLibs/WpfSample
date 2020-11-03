@@ -46,7 +46,7 @@ namespace WpfSample
                 this.Dispatcher.BeginInvoke(new NotifyInput(ChangeText), new object[] { line });
                 return;
             }
-            textDispViewModel.Model.TextData = line;
+            textDispViewModel.SetTextDataCommand.Execute(line);
         }
 
         private void Button1_Click(object sender, RoutedEventArgs e)
